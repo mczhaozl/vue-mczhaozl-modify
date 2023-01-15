@@ -1,3 +1,30 @@
+/**
+ * mczhaozl 修改
+ * 1.引入$watch 清除回调函数
+  function doSomeThing(value,oldValue){
+    // 每次id变化的时候执行 回调
+    return ()=>{
+      // 第n+1次执行doSomeThing，或者组件卸载的时候
+      // 会先执行第n次doSomeThing的返回函数
+    }
+  }
+  vm.$watch('id',doSomeThing)
+
+  举个例子
+  // 简化生命周期
+  vm1.$watch(()=>null,doSomeThing,{immediate：true})
+  // 多组件更好复用逻辑
+  vm2.$watch(()=>null,doSomeThing,{immediate：true})
+  // 有效避免忘记在销毁阶段清除副作用
+
+  2. 实习多元化判断变化方法
+  1. 应用地址是否发生变化 
+  2. 浅比较
+  3. 深比较
+ */
+
+
+
 import {
   warn,
   remove,
