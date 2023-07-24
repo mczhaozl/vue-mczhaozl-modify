@@ -58,7 +58,8 @@ export default class Watcher implements DepTarget {
   noRecurse?: boolean
   getter: Function
   value: any
-  post: boolean
+  post: boolean 
+  cancel:any 
 
   // dev only
   onTrack?: ((event: DebuggerEvent) => void) | undefined
@@ -97,6 +98,14 @@ export default class Watcher implements DepTarget {
       }
     } else {
       this.deep = this.user = this.lazy = this.sync = false
+    }
+    // 引入副作用函数清空函数
+    this.cancel =noop
+    // vm 销毁前执行清空函数
+    if(vm){
+      vm?.$on('hook:beforeDestroy',()=>{
+        typeof this.cancel ==='function' && this.cancel()
+      })
     }
     this.cb = cb
     this.id = ++uid // uid for batching
@@ -232,7 +241,8 @@ export default class Watcher implements DepTarget {
             info
           )
         } else {
-          this.cb.call(this.vm, value, oldValue)
+          typeof this.cancel ==='function' && this.cancel()
+          this.cancel = this.cb.call(this.vm, value, oldValue)
         }
       }
     }
