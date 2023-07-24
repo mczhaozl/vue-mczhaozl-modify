@@ -9,35 +9,20 @@
   <a href="https://chat.vuejs.org/"><img src="https://img.shields.io/badge/chat-on%20discord-7289da.svg?sanitize=true" alt="Chat"></a>
 </p>
 
-## This repo is for Vue 2
-
-You are looking at the repository for Vue 2. The repo for Vue 3 is [vuejs/core](https://github.com/vuejs/core).
-
-## Sponsors
-
-Vue.js is an MIT-licensed open source project with its ongoing development made possible entirely by the support of these awesome [backers](https://github.com/vuejs/core/blob/main/BACKERS.md). If you'd like to join them, please consider [ sponsor Vue's development](https://vuejs.org/sponsor/).
-
-<p align="center">
-  <h3 align="center">Special Sponsor</h3>
-</p>
-
-<p align="center">
-  <a target="_blank" href="https://github.com/appwrite/appwrite">
-  <img alt="special sponsor appwrite" src="https://sponsors.vuejs.org/images/appwrite.svg" width="300">
-  </a>
-</p>
-
-<p align="center">
-  <a target="_blank" href="https://vuejs.org/sponsor/">
-    <img alt="sponsors" src="https://sponsors.vuejs.org/sponsors.svg?v2">
-  </a>
-</p>
+## 这是 mczhaozl fork 版
+原版链接
+[vue.js 2.x版本/core](https://github.com/vuejs/core)
+[vue.js 3.x版本/core](https://github.com/vuejs/core)
 
 ---
 
 ## Introduction
-张兆图修改版
-Vue (pronounced `/vjuː/`, like view) is a **progressive framework** for building user interfaces. It is designed from the ground up to be incrementally adoptable, and can easily scale between a library and a framework depending on different use cases. It consists of an approachable core library that focuses on the view layer only, and an ecosystem of supporting libraries that helps you tackle complexity in large Single-Page Applications.
+在vue的基础上，我新增了一些api 帮助开发者更好实现相关功能。
+1. 引入cloneElement方法
+帮助开发者修改已经创建的虚拟dom的属性
+2. 修改$attrs判断逻辑
+3. 
+
 
 #### Browser Compatibility
 
